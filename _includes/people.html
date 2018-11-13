@@ -1,0 +1,9 @@
+<ul class="faces">
+    {% for person in include.section.people %}
+    <li>
+        <span class="image"><img src="{{ person.img_path | relative_url }}" alt="" /></span>
+        <h3>{{ person.name }}</h3>
+        <p>{{ person.position }}</p>
+    </li>
+    {% endfor %}
+</ul>

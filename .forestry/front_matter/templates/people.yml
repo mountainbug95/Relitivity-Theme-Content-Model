@@ -1,0 +1,52 @@
+---
+label: People Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: section_id
+    label: Section ID
+  - type: text
+    name: title
+    label: Section Title
+    default: Mauris sed lorem
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Section Subtitle
+    description: The text displayed below the section title
+    default: >-
+      Aenean ornare velit lacus varius enim ullamcorper proin aliquam facilisis
+      ante sed etiam magna interdum congue. Sed consequat amet dolor magna
+      consequat. Lorem ipsum dolor amet nullam sed etiam veroeros.
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: field_group_list
+    name: people
+    label: People
+    description: A list of people
+    config:
+      labelField: name
+    fields:
+      - type: text
+        name: name
+        label: Name
+        config:
+          required: true
+      - type: text
+        name: position
+        label: Position
+      - type: file
+        name: img_path
+        label: Image
+        description: A picture of the person
+  - type: text
+    name: component
+    hidden: true
+    default: people.html
+    config:
+      required: true

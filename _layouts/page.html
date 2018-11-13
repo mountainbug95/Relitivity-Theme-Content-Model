@@ -1,0 +1,23 @@
+---
+layout: body
+---
+
+<!-- Section -->
+<section class="main alt">
+    <header>
+        <h1>{{ page.title }}</h1>
+        {{ page.subtitle | markdownify }}
+    </header>
+    <div class="inner style2">
+        {% if page.content_img_path %}
+            <div class="image main" data-position="center"><img src="{{ page.content_img_path | relative_url }}" alt="" /></div>
+        {% endif %}
+        {% assign sections = content | split: '<!--section-->' %}
+        {% for part in sections %}
+            {{ part | markdownify }}
+            {% unless forloop.last %}
+                <hr class="major" />
+            {% endunless %}
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,41 @@
+title: Relativity
+baseurl: /
+footer:
+  social_links:
+    - title: Twitter
+      icon: fa-twitter
+      link_url: '#'
+    - title: Facebook
+      icon: fa-facebook
+      link_url: '#'
+    - title: Instagram
+      icon: fa-instagram
+      link_url: '#'
+    - title: GitHub
+      icon: fa-github
+      link_url: '#'
+    - title: Phone
+      icon: fa-phone
+      link_url: '#'
+    - title: Email
+      icon: fa-envelope-o
+      link_url: '#'
+  copyright: '&copy; Relativity. All rights reserved.'
+palette: blue
+palettes:
+  blue:
+    sass:
+      bg: '#4a98e2'
+  green:
+    sass:
+      bg: '#3dc5ad'
+  orange:
+    sass:
+      bg: '#e56f44'
+sass:
+  indentWidth: 4
+  style: nested
+  precision: 10
+plugins:
+  - jekyll-menus
+permalink: '/posts/:slug:output_ext'

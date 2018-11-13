@@ -1,0 +1,74 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: The page title
+    config:
+      required: true
+  - type: field_group
+    name: banner
+    label: Page Banner
+    description: The banner displayed at the top of the page
+    fields:
+      - type: text
+        name: title
+        label: Banner Title
+        description: The bold first line of text displayed in the banner
+        config:
+          required: true
+      - type: textarea
+        name: subtitle
+        label: Banner Subtitle
+        description: The text displayed under the banner title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: text
+        name: scroll_link
+        label: Scroll ID
+        description: >-
+          The section ID that the scroll arrow at the bottom of the banner
+          scrolls to
+        default: '#first'
+  - type: field_group
+    name: contact
+    label: Contact Section
+    description: The contact section displayed at the bottom of the page
+    fields:
+      - type: boolean
+        name: enabled
+        label: Enabled
+        description: Displays the contact section at the bottom of the page
+        default: false
+      - type: text
+        name: title
+        label: Contact Section Title
+      - type: textarea
+        name: subtitle
+        label: Contact Section Subtitle
+        description: The text displayed below the contact section title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home Sections
+    template_types:
+      - posts
+      - people
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - index.md

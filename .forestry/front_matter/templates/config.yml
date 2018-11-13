@@ -1,0 +1,79 @@
+---
+label: Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: field_group
+    name: footer
+    label: Footer Configuration
+    fields:
+      - type: field_group_list
+        name: social_links
+        label: Social Media
+        description: A list of social media icons displayed in the page footer
+        config:
+          labelField: title
+        fields:
+          - type: text
+            name: title
+            label: Icon Title
+            config:
+              required: true
+          - type: text
+            name: icon
+            label: Icon
+            description: Font Awesome Icon
+          - type: text
+            name: link_url
+            label: URL
+      - type: text
+        name: copyright
+        label: Footer Copyright
+        description: The copyright text displayed along the bottom of the page footer
+        default: '&copy; Relativity. All rights reserved.'
+  - type: select
+    name: palette
+    label: Color Palette
+    description: The color palette used for the site
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - blue
+        - green
+        - orange
+  - type: field_group
+    name: palettes
+    hidden: true
+    fields:
+      - type: field_group
+        name: blue
+        fields:
+          - type: field_group
+            name: sass
+            fields:
+              - type: text
+                name: bg
+      - type: field_group
+        name: green
+        fields:
+          - type: field_group
+            name: sass
+            fields:
+              - type: text
+                name: bg
+      - type: field_group
+        name: orange
+        fields:
+          - type: field_group
+            name: sass
+            fields:
+              - type: text
+                name: bg

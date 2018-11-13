@@ -1,0 +1,23 @@
+---
+layout: body
+---
+
+{% include banner.html %}
+
+{% for section in page.sections %}
+<!-- Section -->
+<section class="main {% if section.section_class %}{{ section.section_class }}{% endif %}" {% if section.section_id %}id="{{ section.section_id }}"{% endif %}>
+    <header>
+        <h2>{{ section.title }}</h2>
+        {{ section.subtitle | markdownify }}
+    </header>
+    <div class="inner">
+        
+        {% include {{ section.component }} section=section site=site %}
+    </div>
+</section>
+{% endfor %}
+
+{% if page.contact.enabled %}
+    {% include contact.html %}
+{% endif %}

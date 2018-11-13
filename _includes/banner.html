@@ -1,0 +1,10 @@
+<!-- Banner -->
+<section id="banner">
+    <div class="content">
+        <h1>{{ page.banner.title }}</h1>
+        {{ page.banner.subtitle | markdownify }}
+    </div>
+    {% if page.banner.scroll_link %}
+        <a href="{{ page.banner.scroll_link }}" class="more scrolly">Learn More</a>
+    {% endif %}
+</section>

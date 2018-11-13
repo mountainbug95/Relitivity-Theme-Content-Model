@@ -1,0 +1,18 @@
+{% assign arr = include.site.posts | sort: 'date' | reverse %}
+{% for post in arr %}
+<article class="post{% if include.section.article_class %} {{ include.section.article_class }}{% endif %} {% cycle 'alt', '' %}">
+    <div class="content" {% unless post.alt_img_path %}style="width: 100%"{% endunless %}>
+        <header>
+            <span class="category">{{ post.subtitle }}</span>
+            <h3>{{ post.title }}</h3>
+        </header>
+        {{ post.excerpt | markdownify }}
+        <ul class="actions">
+            <li><a href="{{ post.url | relative_url }}" class="button next">Learn More</a></li>
+        </ul>
+    </div>
+    {% if post.alt_img_path %}
+    <div class="image" data-position="center"><img src="{{ post.alt_img_path | relative_url }}" alt="" /></div>
+    {% endif %}
+</article>
+{% endfor %}

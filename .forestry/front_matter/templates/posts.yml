@@ -1,0 +1,52 @@
+---
+label: Posts Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: section_id
+    label: Section ID
+  - type: text
+    name: title
+    label: Section Title
+    default: Posts section title
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Section Subtitle
+    description: The text displayed below the section title
+    default: Posts section subtitle.
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: select
+    name: section_class
+    label: Section Style
+    description: The color scheme used for the section
+    config:
+      source:
+        type: custom
+      options:
+        - alt
+        - accent1
+        - accent2
+  - type: select
+    name: article_class
+    label: Article Style
+    description: The color scheme used for the section
+    default: style2
+    config:
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+  - type: text
+    name: component
+    hidden: true
+    default: posts.html
+    config:
+      required: true
