@@ -22,6 +22,7 @@ fields:
     label: Section ID
   - type: text
     name: component
+    label: Section Component
     hidden: true
     config:
       required: true

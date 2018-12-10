@@ -46,6 +46,7 @@ fields:
         description: A picture of the person
   - type: text
     name: component
+    label: Section Component
     hidden: true
     default: people.html
     config:
